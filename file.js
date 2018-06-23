@@ -28,7 +28,8 @@ $("#add-athlete").on("click", function(event){
 
 addAthleteButtons();
 
-$(".btn").on("click", function(){
+//Clicking the button of an athlete will append GIFs to the page
+function pushGIFs(){
     var athlete = $(this).attr("data-name");
     console.log(athlete);
     var queryURL = "https://api.giphy.com/v1/gifs/search?" + "&api_key=YorKFzqJrMLyjl579IkUbSyAgntt27Dj" + "&q=" + athlete;
@@ -56,9 +57,14 @@ $.ajax({
 
             $("#GIFs").prepend(gifDiv);
         }
-    });
+    })
+};
 
-//
+$(document).on("click", ".athName", pushGIFs);
+
+
+
+//trying to pause/play GIFs but not working...
     $(".img").on("click", function(){
         var state = $(this).attr("data-state");
     
@@ -72,4 +78,3 @@ $.ajax({
             athleteImage.attr("src", results[i].images.fixed_height_still.url);
         }
     });
-});
