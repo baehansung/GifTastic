@@ -5,14 +5,24 @@
   <meta charset="UTF-8">
   <title>Athlete GIFS</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <button data-athlete="Lionel Messi">Lionel Messi</button>
-    <button data-athlete="Cristiano Ronaldo">Cristiano Ronaldo</button>
-    <button data-athlete="LeBron James">LeBron James</button>
-    
+<body class="bg-secondary">
+
     <div id="athleteGIFs"></div>
+    <div id="athleteGIFs2"></div>
+
+    <form id="athlete-form" style="border-style: solid; border-width: 2px; border-color: white; padding: 20px; margin-right: 100px;">
+        <h4 class="text-white">Add an athlete</h3>
+        <label class="text-white" for="athlete-input"></label>
+        <input type="text" id="athlete-input"><br>
+    
+        <!-- Button triggers new movie to be added -->
+        <input class="btn btn-info" id="add-athlete" type="submit" value="Submit">
+    </form>
+
+    <div id="GIFs"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="file.js"></script>

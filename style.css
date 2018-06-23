@@ -1,0 +1,39 @@
+.btn {
+    margin-bottom: 5px;
+}
+
+.athName {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+#athleteGIFs {
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+#enterAthlete {
+    float: right;
+    padding: 20px;
+}
+
+#athlete-form {
+    float: right;
+    padding-right: 100px;
+}
+
+#athlete-input {
+    width: 260px;
+}
+
+#GIFs {
+    padding-left: 70px;
+}
+
+#add-athlete {
+    margin-top: 10px;
+}
+
+#submit {
+    margin-top: 10px;
+}
