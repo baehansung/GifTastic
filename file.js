@@ -60,21 +60,35 @@ $.ajax({
     })
 };
 
+//Allows newly added athlete buttons that are added via the Search button, to be dynamic and also push GIFs
 $(document).on("click", ".athName", pushGIFs);
 
 
+//below document.on function still does not pause/play GIFs
+$(document).on("click", "#item", function(){
+    var state = $(this).attr('data-state');
+
+    if(state === 'still'){
+        $(this).attr('src', $(this).attr('data-animate'));
+        $(this).attr('data-state', 'animate');
+    } else {
+        $(this).attr('src', $(this).attr('data-still'));
+        $(this).attr('data-state', 'still');
+    }
+});
+
 
 //trying to pause/play GIFs but not working...
-    $(".img").on("click", function(){
-        var state = $(this).attr("data-state");
+    // $(".img").on("click", function(){
+    //     var state = $(this).attr("data-state");
     
-        if(state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-            athleteImage.attr("src", results[i].images.fixed_height.url);
-        } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-            athleteImage.attr("src", results[i].images.fixed_height_still.url);
-        }
-    });
+    //     if(state === "still") {
+    //         $(this).attr("src", $(this).attr("data-animate"));
+    //         $(this).attr("data-state", "animate");
+    //         athleteImage.attr("src", results[i].images.fixed_height.url);
+    //     } else {
+    //         $(this).attr("src", $(this).attr("data-still"));
+    //         $(this).attr("data-state", "still");
+    //         athleteImage.attr("src", results[i].images.fixed_height_still.url);
+    //     }
+    // });
