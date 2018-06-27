@@ -30,6 +30,11 @@
     padding-left: 70px;
 }
 
+.img {
+    width: 35%;
+    height: 240px;
+}
+
 #add-athlete {
     margin-top: 10px;
 }

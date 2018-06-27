@@ -50,7 +50,9 @@ $.ajax({
 
             var athleteImage = $("<img>");
 
-            athleteImage.attr("src", results[i].images.fixed_height_still.url);
+            athleteImage.attr("src", results[i].images.fixed_width.url);
+            athleteImage.attr("data-animate", results[i].images.fixed_width.url);
+            athleteImage.attr("data-still", results[i].images.original_still.url);
 
             gifDiv.append(p);
             gifDiv.append(athleteImage);
@@ -63,16 +65,17 @@ $.ajax({
 //Allows newly added athlete buttons that are added via the Search button, to be dynamic and also push GIFs
 $(document).on("click", ".athName", pushGIFs);
 
-
 //below document.on function still does not pause/play GIFs
 $(document).on("click", "#item", function(){
     var state = $(this).attr('data-state');
 
+    image = $(this).children('img').addClass("img");
+
     if(state === 'still'){
-        $(this).attr('src', $(this).attr('data-animate'));
+        $(image).attr('src', $(image).attr('data-animate'));
         $(this).attr('data-state', 'animate');
     } else {
-        $(this).attr('src', $(this).attr('data-still'));
+        $(image).attr('src', $(image).attr('data-still'));
         $(this).attr('data-state', 'still');
     }
 });
