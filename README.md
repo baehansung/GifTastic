@@ -10,4 +10,4 @@ NOT FINISHED: Errors still include not being able to pause/play the GIFs (docume
 
 
 
-baehansung.github.io/GifTastic
+Deployed: baehansung.github.io/GifTastic
